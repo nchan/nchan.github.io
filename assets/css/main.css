@@ -2657,7 +2657,7 @@ input, select, textarea {
 		input[type="button"].primary,
 		button.primary,
 		.button.primary {
-			background-color: #8cd1a8;
+			background-color: #6b7280;
 			border: 0;
 			box-shadow: none;
 			color: #ffffff !important;
@@ -2668,7 +2668,7 @@ input, select, textarea {
 			input[type="button"].primary:hover,
 			button.primary:hover,
 			.button.primary:hover {
-				background-color: #9ed8b6;
+				background-color: #7c8390;
 			}
 
 			input[type="submit"].primary:active,
@@ -2676,7 +2676,7 @@ input, select, textarea {
 			input[type="button"].primary:active,
 			button.primary:active,
 			.button.primary:active {
-				background-color: #7aca9a;
+				background-color: #5a6270;
 			}
 
 			input[type="submit"].primary.icon:before,
@@ -2684,7 +2684,7 @@ input, select, textarea {
 			input[type="button"].primary.icon:before,
 			button.primary.icon:before,
 			.button.primary.icon:before {
-				color: #d1eddc;
+				color: #c1c8d0;
 			}
 
 		input[type="submit"].disabled, input[type="submit"]:disabled,
@@ -3141,4 +3141,142 @@ input, select, textarea {
 					padding: 0;
 				}
 
+	}
+
+/* ==========================================================
+   Film Photography Gallery Modal
+   ========================================================== */
+
+	#gallery-modal {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		z-index: 10000;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		opacity: 0;
+		pointer-events: none;
+		transition: opacity 0.4s ease;
+	}
+
+	#gallery-modal.is-visible {
+		opacity: 1;
+		pointer-events: auto;
+	}
+
+	.gallery-overlay {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background: rgba(0, 0, 0, 0.92);
+		cursor: pointer;
+	}
+
+	.gallery-content {
+		position: relative;
+		display: flex;
+		align-items: center;
+		gap: 1.25em;
+		max-width: 95vw;
+		max-height: 90vh;
+		z-index: 1;
+	}
+
+	.gallery-img-wrap {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		max-width: 82vw;
+		max-height: 88vh;
+	}
+
+	.gallery-img {
+		display: block;
+		max-width: 82vw;
+		max-height: 85vh;
+		width: auto;
+		height: auto;
+		object-fit: contain;
+		opacity: 0;
+		transition: opacity 0.3s ease;
+	}
+
+	.gallery-img.is-loaded {
+		opacity: 1;
+	}
+
+	.gallery-close,
+	.gallery-prev,
+	.gallery-next {
+		background: none;
+		border: 2px solid rgba(255, 255, 255, 0.45);
+		border-radius: 50%;
+		color: #ffffff;
+		cursor: pointer;
+		font-size: 1.1em;
+		width: 2.75em;
+		height: 2.75em;
+		line-height: 1;
+		padding: 0;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-shrink: 0;
+		transition: background-color 0.2s ease, border-color 0.2s ease;
+	}
+
+	.gallery-close:hover,
+	.gallery-prev:hover,
+	.gallery-next:hover {
+		background-color: rgba(255, 255, 255, 0.12);
+		border-color: rgba(255, 255, 255, 0.85);
+	}
+
+	.gallery-close {
+		position: absolute;
+		top: -3.75em;
+		right: 0;
+		font-size: 1.4em;
+	}
+
+	.gallery-counter {
+		position: absolute;
+		bottom: -2.25em;
+		left: 50%;
+		transform: translateX(-50%);
+		color: rgba(255, 255, 255, 0.5);
+		font-family: 'Raleway', sans-serif;
+		font-size: 0.8em;
+		letter-spacing: 0.12em;
+		white-space: nowrap;
+	}
+
+	/* Film photography item: interactive cursor + subtle hover */
+	.film-photo-trigger {
+		cursor: pointer;
+		transition: opacity 0.2s ease;
+	}
+
+	.film-photo-trigger:hover {
+		opacity: 0.72;
+	}
+
+/* ==========================================================
+   Scroll Fade-in for Section Content
+   ========================================================== */
+
+	.main .content {
+		opacity: 0;
+		transform: translateY(0.75em);
+		transition: opacity 0.65s ease, transform 0.65s ease;
+	}
+
+	.main .content.is-content-visible {
+		opacity: 1;
+		transform: translateY(0);
 	}

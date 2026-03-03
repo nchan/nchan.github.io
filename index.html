@@ -54,7 +54,7 @@
 						</header>
 						<p>A few hobbies I (try to) keep up with.</p>
 						<ul class="icons-grid">
-							<li>
+							<li class="film-photo-trigger" tabindex="0" role="button" aria-label="Open film photography gallery" aria-haspopup="dialog">
 								<span class="icon solid major fa-camera-retro"></span>
 								<h3>film photography</h3>
 							</li>
@@ -450,6 +450,20 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 				</footer>
 			</section>
 
+		<!-- Film Photography Gallery Modal -->
+			<div id="gallery-modal" role="dialog" aria-modal="true" aria-label="Film photography gallery">
+				<div class="gallery-overlay"></div>
+				<div class="gallery-content">
+					<button class="gallery-close" aria-label="Close gallery">&times;</button>
+					<button class="gallery-prev" aria-label="Previous image">&#8592;</button>
+					<div class="gallery-img-wrap">
+						<img class="gallery-img" src="" alt="" />
+					</div>
+					<button class="gallery-next" aria-label="Next image">&#8594;</button>
+					<div class="gallery-counter"></div>
+				</div>
+			</div>
+
 		<!-- Scripts -->
 			<script src="assets/js/jquery.min.js"></script>
 			<script src="assets/js/jquery.scrollex.min.js"></script>
@@ -458,6 +472,7 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+			<script src="assets/js/gallery.js"></script>
 
 	</body>
 
